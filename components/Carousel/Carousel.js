@@ -20,30 +20,29 @@
 
 function makeCarosel(){
   const caroselHolder = document.createElement('div'),
-  left = document.createElement('div'),
   img = document.createElement('img'),
   imgTwo = document.createElement('img'),
   imgThree = document.createElement('img'),
-  imgFour = document.createElement('img'),
-  right = document.createElement('div');
+  imgFour = document.createElement('img');
+  
   //adding classes
   caroselHolder.classList.add('carousel');
-  left.classList.add('left-button');
-  right.classList.add('right-button');
+
   //adding content
-  left.innerText = 'left';
+  
   img.src = "./assets/carousel/mountains.jpeg";
   imgTwo.src = "./assets/carousel/computer.jpeg";
   imgThree.src = "./assets/carousel/trees.jpeg";
   imgFour.src = "./assets/carousel/turntable.jpeg";
-  right.innerText = "right";
+
   //appending
-  caroselHolder.appendChild(left);
   caroselHolder.appendChild(img);
   caroselHolder.appendChild(imgTwo);
   caroselHolder.appendChild(imgThree);
   caroselHolder.appendChild(imgFour);
-  caroselHolder.appendChild(right);
+  
+
+
 
   return caroselHolder;
 }
