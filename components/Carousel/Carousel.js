@@ -58,16 +58,26 @@ const imgs = document.querySelectorAll('.carousel img');
 console.log(imgs);
 
 var pic = 0;
+var yate = false;
 setInterval(() => {
-  if(pic >=1){
-    imgs[pic-1].classList.toggle('show');
+
+  if(imgs[3].classList.contains('show')){
+    imgs[3].classList.toggle('show');
   }
-  imgs[pic].classList.toggle('show');
-  if(pic <= 2){
-    pic+=1;
-  }if (pic >=3) {
-    pic =0;
-  } 
+  if(yate){
+    imgs[pic-1].classList.toggle('show');
+    console.log("this is toggling: ", pic-1);
+  }
+imgs[pic].classList.toggle('show')
+console.log("showing pic", pic);
+pic +=1;
+yate = true; 
+
+if(pic > 3){
+  pic = 0;
+  yate = false;
+}
+
 },1000);
  
 
