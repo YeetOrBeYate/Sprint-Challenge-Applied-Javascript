@@ -20,9 +20,7 @@ entryPoint = document.querySelector('.topics');
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then((res)=>{
         let topics = res.data.topics
-        
         topics.forEach((tab) => {
             entryPoint.appendChild(createTab(tab));
         });
-        
     })
