@@ -82,6 +82,7 @@ console.log(imgs);
 
 var pic = 0;
 var yate = false;
+var hold = false;
 imgs[0].classList.toggle('show');
 setInterval(()=>{
   
@@ -90,18 +91,28 @@ if(!yate){
 console.log(pic);
   imgs[pic-1].classList.toggle('show');
   imgs[pic].classList.toggle('show');
-  if(pic ==3 ){
+
+  if(pic == 3 ){
     yate = true;
+    hold = false;
   }
+  
 }
 if(yate){
+  setTimeout(()=>{
+    hold = true;
+  },50)
+}
+
+if(yate && hold){
   imgs[imgs.length-1].classList.toggle('show');
   pic = 0;
   console.log("from treu");
   imgs[pic].classList.toggle('show');
   yate = false;
+  
 }
-},1000);
+},2000);
  
 
 
