@@ -17,3 +17,65 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function makeCarosel(){
+  const caroselHolder = document.createElement('div'),
+  left = document.createElement('div'),
+  img = document.createElement('img'),
+  imgTwo = document.createElement('img'),
+  imgThree = document.createElement('img'),
+  imgFour = document.createElement('img'),
+  right = document.createElement('div');
+  //adding classes
+  caroselHolder.classList.add('carousel');
+  left.classList.add('left-button');
+  right.classList.add('right-button');
+  //adding content
+  left.innerText = 'left';
+  img.src = "./assets/carousel/mountains.jpeg";
+  imgTwo.src = "./assets/carousel/computer.jpeg";
+  imgThree.src = "./assets/carousel/trees.jpeg";
+  imgFour.src = "./assets/carousel/turntable.jpeg";
+  right.innerText = "right";
+  //appending
+  caroselHolder.appendChild(left);
+  caroselHolder.appendChild(img);
+  caroselHolder.appendChild(imgTwo);
+  caroselHolder.appendChild(imgThree);
+  caroselHolder.appendChild(imgFour);
+  caroselHolder.appendChild(right);
+
+  return caroselHolder;
+}
+
+let yeet = makeCarosel();
+console.log(yeet);
+
+let spot = document.querySelector('.carousel-container');
+spot.appendChild(yeet);
+
+const imgs = document.querySelectorAll('.carousel img');
+console.log(imgs);
+
+var pic = 0;
+setInterval(() => {
+  if(pic >=1){
+    imgs[pic-1].classList.toggle('show');
+  }
+  imgs[pic].classList.toggle('show');
+  if(pic <= 2){
+    pic+=1;
+  }if (pic >=3) {
+    pic =0;
+  } 
+},1000);
+ 
+
+
+// imgs.forEach((i)=>{
+//   i.classList.toggle('show');
+// })
+
+
+
+
