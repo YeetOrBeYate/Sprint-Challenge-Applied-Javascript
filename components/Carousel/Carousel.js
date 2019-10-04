@@ -57,34 +57,55 @@ spot.appendChild(yeet);
 const imgs = document.querySelectorAll('.carousel img');
 console.log(imgs);
 
+// var pic = 0;
+// var yate = false;
+// setInterval(() => {
+
+//   if(imgs[3].classList.contains('show')){
+//     imgs[3].classList.toggle('show');
+//   }
+//   if(yate){
+//     imgs[pic-1].classList.toggle('show');
+//     console.log("this is toggling: ", pic-1);
+//   }
+// imgs[pic].classList.toggle('show')
+// console.log("showing pic", pic);
+// pic +=1;
+// yate = true; 
+
+// if(pic > 3){
+//   pic = 0;
+//   yate = false;
+// }
+
+// },1000);
+
 var pic = 0;
 var yate = false;
-setInterval(() => {
-
-  if(imgs[3].classList.contains('show')){
-    imgs[3].classList.toggle('show');
+imgs[0].classList.toggle('show');
+setInterval(()=>{
+  
+if(!yate){
+  pic +=1;
+console.log(pic);
+  imgs[pic-1].classList.toggle('show');
+  imgs[pic].classList.toggle('show');
+  if(pic ==3 ){
+    yate = true;
   }
-  if(yate){
-    imgs[pic-1].classList.toggle('show');
-    console.log("this is toggling: ", pic-1);
-  }
-imgs[pic].classList.toggle('show')
-console.log("showing pic", pic);
-pic +=1;
-yate = true; 
-
-if(pic > 3){
+}
+if(yate){
+  imgs[imgs.length-1].classList.toggle('show');
   pic = 0;
+  console.log("from treu");
+  imgs[pic].classList.toggle('show');
   yate = false;
 }
-
 },1000);
  
 
 
-// imgs.forEach((i)=>{
-//   i.classList.toggle('show');
-// })
+
 
 
 
